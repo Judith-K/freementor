@@ -15,12 +15,11 @@ app.use(bodyParser.json());
 app.use("/freementor/v1/user",userRouter);
 app.use("/freementor/v1/session",sessionRoutes);
 
-app.use("/",(req,res,next)=>{
-     res.status(404).send*({
-         status:404,
-         message:"this route not exist"
-     })
-
+app.use('/',(req,res)=>{
+    res.status(404).send({
+        statu:404,
+        message:"this route does not exist"
+    })
 })
 
 const port=process.env.PORT;
